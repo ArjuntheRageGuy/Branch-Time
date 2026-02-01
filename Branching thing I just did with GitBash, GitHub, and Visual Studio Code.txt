@@ -1,0 +1,274 @@
+
+User@LaVie-LM750 MINGW64 ~
+$ git config --local --list
+fatal: --local can only be used inside a git repository
+
+User@LaVie-LM750 MINGW64 ~
+$ git config --local user.name "ArjuntheRageGuy"
+fatal: --local can only be used inside a git repository
+
+User@LaVie-LM750 MINGW64 ~
+$ git config --global --list
+user.name=ArjuntheRageGuy
+user.email=Ajrafon@gmail.com
+
+User@LaVie-LM750 MINGW64 ~
+$ cd desktop
+
+User@LaVie-LM750 MINGW64 ~/desktop
+$ mkdir BranchUp
+
+User@LaVie-LM750 MINGW64 ~/desktop
+$ cd BranchUp
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp
+$ git init
+Initialized empty Git repository in C:/Users/User/Desktop/BranchUp/.git/
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (master)
+$ git config --local --list
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (master)
+$ git config --local user.name "ArjuntheRageGuy"
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (master)
+$ git config --local user.gmail "Ajrafon@gmail.com"
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (master)
+$ git config --local --list
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+user.name=ArjuntheRageGuy
+user.gmail=Ajrafon@gmail.com
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (master)
+$ touch index.html
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (master)
+$ touch style.css
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (master)
+$ touch app.js
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (master)
+$ ls
+app.js  index.html  style.css
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (master)
+$ git add .
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   app.js
+        new file:   index.html
+        new file:   style.css
+
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (master)
+$ git commit -m "Branching time, one more time."
+[master (root-commit) 0b637a1] Branching time, one more time.
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 app.js
+ create mode 100644 index.html
+ create mode 100644 style.css
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (master)
+$ git log
+commit 0b637a14ed25ea29ef83a2ab3945195a76d7f693 (HEAD -> master)
+Author: ArjuntheRageGuy <Ajrafon@gmail.com>
+Date:   Sun Feb 1 15:35:57 2026 +0800
+
+    Branching time, one more time.
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (master)
+$ git remote add origin https://github.com/ArjuntheRageGuy/Branch-Time.git
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (master)
+$ git branch -M main
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (main)
+$ git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 253 bytes | 84.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/ArjuntheRageGuy/Branch-Time.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (main)
+$ git branch
+* main
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (main)
+$ git branch development
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (main)
+$ git branch
+  development
+* main
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (main)
+$ git checkout development
+Switched to branch 'development'
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (development)
+$ git push
+fatal: The current branch development has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin development
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (development)
+$ git push development
+fatal: 'development' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (development)
+$ git add .
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (development)
+$ git status
+On branch development
+nothing to commit, working tree clean
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (development)
+$ git push --set-upstream origin development
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'development' on GitHub by visiting:
+remote:      https://github.com/ArjuntheRageGuy/Branch-Time/pull/new/development
+remote:
+To https://github.com/ArjuntheRageGuy/Branch-Time.git
+ * [new branch]      development -> development
+branch 'development' set up to track 'origin/development'.
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (development)
+$ git push origin development
+Everything up-to-date
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (development)
+$ code
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (development)
+$ code .
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (development)
+$ git add server.php
+fatal: pathspec 'server.php' did not match any files
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (development)
+$ git add server.php
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (development)
+$ git commit -m 'added some other file'
+[development 3d0064f] added some other file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 server.php
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (development)
+$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 246 bytes | 246.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/ArjuntheRageGuy/Branch-Time.git
+   0b637a1..3d0064f  development -> development
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (development)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (main)
+$ git add server.php
+fatal: pathspec 'server.php' did not match any files
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (main)
+$ git checkout development
+Switched to branch 'development'
+Your branch is up to date with 'origin/development'.
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (development)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (main)
+$ git checkout development
+Switched to branch 'development'
+Your branch is up to date with 'origin/development'.
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (development)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+User@LaVie-LM750 MINGW64 ~/desktop/BranchUp (main)
+$
+
+PS C:\Users\User\desktop\BranchUp> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean        
+PS C:\Users\User\desktop\BranchUp> https://github.com/ArjuntheRageGuy/Branch-Time.git
+https://github.com/ArjuntheRageGuy/Branch-Time.git : 
+The term 
+'https://github.com/ArjuntheRageGuy/Branch-Time.git' 
+is not recognized as the name of a cmdlet, function, 
+script file, or operable program. Check the spelling 
+the path is correct and try again.
+At line:1 char:1
++ https://github.com/ArjuntheRageGuy/Branch-Time.git    
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~    
+    + CategoryInfo          : ObjectNotFound: (https:/  
+   /github....Branch-Time.git:String) [], CommandNotF   
+  oundException
+    + FullyQualifiedErrorId : CommandNotFoundException  
+PS C:\Users\User\desktop\BranchUp> git clone https://gitremote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 5 (delta 1), reused 5 (delta 1), pack-reused 0 (from 0)
+Receiving objects: 100% (5/5), done.
+Resolving deltas: 100% (1/1), done.
+PS C:\Users\User\desktop\BranchUp> git merge main       
+Already up to date.
+PS C:\Users\User\desktop\BranchUp> git merge development
+Updating 0b637a1..3d0064f
+Fast-forward
+ server.php | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)        
+ create mode 100644 server.php
+PS C:\Users\User\desktop\BranchUp>
+ *  History restored 
+
+PS C:\Users\User\desktop\BranchUp>
